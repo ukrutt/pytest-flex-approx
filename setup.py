@@ -38,7 +38,7 @@ setup(
     ],
     entry_points={
         # If this isn't a runnable program, you can delete this entry point.
-        "console_scripts": ["hello_world=pytest_mix_dict.main:hello_world",]
+        "console_scripts": ["hello_world=pytest_mix_dict.main:hello_world"]
     },
     setup_requires=["pytest-runner"],
     tests_require=["pytest"],
