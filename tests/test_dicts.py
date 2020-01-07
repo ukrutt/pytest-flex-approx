@@ -27,3 +27,12 @@ def test_numeric_dict_approx():
     # We expect this to fail, because of intricacies of floating point
     # arithmetic.
     assert new_dict == pytest.approx(exp_dict)
+
+
+def test_non_numeric_dict():
+    """Test non-numeric dict."""
+    new_dict = {}
+    new_dict["three"] = "one" + "two"
+    exp_dict = {"three": "onetwo"}
+
+    assert new_dict == exp_dict
