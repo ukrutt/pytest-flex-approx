@@ -1,0 +1,6 @@
+# Ignore the virtual env and egg info
+/.eggs/
+/.venv/
+/build/
+/dist/
+/python_project_template.egg-info/

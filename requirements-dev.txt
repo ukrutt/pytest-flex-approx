@@ -1,0 +1,9 @@
+-e .
+black
+flake8
+freezegun
+ipython
+isort
+pdbpp
+pylint
+pytest
