@@ -3,4 +3,4 @@
 /.venv/
 /build/
 /dist/
-/python_project_template.egg-info/
+/pytest_mix_dict.egg-info/

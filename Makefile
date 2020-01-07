@@ -1,4 +1,4 @@
-PACKAGES = python_project_template tests
+PACKAGES = pytest_mix_dict tests
 
 .PHONY: ci
 ci: check test

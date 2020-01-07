@@ -1,4 +1,4 @@
-"""python-project-template -- my template for new Python programs and libraries
+"""pytest-mix-dict -- development on a class for testing dicts with pytest.
 """
 
 import os
@@ -16,12 +16,12 @@ with open(os.path.join(HERE, "README.md"), encoding="utf-8") as f:
 
 
 setup(
-    name="python-project-template",
+    name="pytest-mix-dict",
     version=VERSION,
     description="Python Project Template",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
-    url="https://github.com/ukrutt/python-project-template",
+    url="https://github.com/ukrutt/pytest-mix-dict",
     author="Henrik Holm",
     author_email="henrik@forestglenresearch.com",
     classifiers=[
@@ -39,7 +39,7 @@ setup(
     entry_points={
         # If this isn't a runnable program, you can delete this entry point.
         "console_scripts": [
-            "hello_world=python_project_template.main:hello_world",
+            "hello_world=pytest_mix_dict.main:hello_world",
         ]
     },
     setup_requires=["pytest-runner"],

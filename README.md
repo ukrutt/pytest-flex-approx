@@ -1,6 +1,14 @@
-# Project template for Python projects
+# Test mixed dicts with `pytest.approx()`
 
-Folder structure, setup file, CI integration, etc. for a generic Python project
+Development on a class for testing dicts with pytest.
+
+ - Pytest currently tests dicts, however, for testing with
+   `pytest.approx()` it only accepts shallow dicts where all `value`s
+   are numbers.
+
+ - We want to accept dicts where there can be a
+   combination of numbers and e.g. strings.
+
 
 ## Installation
 
