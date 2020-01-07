@@ -36,3 +36,13 @@ def test_non_numeric_dict():
     exp_dict = {"three": "onetwo"}
 
     assert new_dict == exp_dict
+
+
+def test_mixed_dict():
+    """With a mixed dict we run into problems!"""
+    new_dict = {}
+    new_dict["three"] = "one" + "two"
+    new_dict["c"] = 0.1 + 0.2
+    exp_dict = {"three": "onetwo", "c": 0.3}
+
+    assert new_dict == pytest.approx(exp_dict)
