@@ -120,10 +120,12 @@ def test_list_in_dict_exact_orig():
     assert new_dict == pytest.approx(exp_dict)
 
 
-@pytest.mark.xfail(raises=TypeError, reason="No nested dicts")
 def test_list_in_dict_exact():
-    """Lists don't even work if they're exact"""
-    new_dict = {"a": [1 + 2, 3]}
+    """Lists work if they're exactly correct.
+
+    If not exact, they'll fail... and the error message won't be very helpful.
+    """
+    new_dict = {"a": [1 + 2, 4]}
     exp_dict = {"a": [3, 4]}
 
     assert new_dict == flex_approx(exp_dict)
