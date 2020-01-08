@@ -3,8 +3,7 @@
 from collections.abc import Mapping
 
 from _pytest.python_api import ApproxMapping
-
-# from _pytest.python_api import approx as _pytest_approx
+from _pytest.python_api import approx as _pytest_approx
 
 
 class ApproxMappingFlex(ApproxMapping):
@@ -25,8 +24,6 @@ class ApproxMappingFlex(ApproxMapping):
 
 def dict_approx(expected, rel=None, absolute=None, nan_ok=False):
     """Approximate for dicts."""
-    if not isinstance(expected, Mapping):
-        raise TypeError(
-            "Can only use this method for a dict or another mapping"
-        )
-    return ApproxMappingFlex(expected, rel, absolute, nan_ok)
+    if isinstance(expected, Mapping):
+        return ApproxMappingFlex(expected, rel, absolute, nan_ok)
+    return _pytest_approx(expected, rel, absolute, nan_ok)

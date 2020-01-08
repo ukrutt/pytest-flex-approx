@@ -85,9 +85,8 @@ def test_nested_dict():
     assert new_dict == dict_approx(exp_dict)
 
 
-@pytest.mark.xfail(raises=TypeError, reason="No lists")
 def test_list():
-    """Lists don't work with my fancy approx."""
+    """Lists work too."""
     new_list = [0.1 + 0.2, 0.4]
     exp_list = [0.3, 0.4]
 
