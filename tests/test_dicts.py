@@ -109,3 +109,21 @@ def test_list_in_dict():
     exp_dict = {"a": [0.3]}
 
     assert new_dict == dict_approx(exp_dict)
+
+
+@pytest.mark.xfail(raises=TypeError, reason="No nested dicts")
+def test_list_in_dict_exact_orig():
+    """Lists don't even work if they're exact"""
+    new_dict = {"a": [1 + 2, 4]}
+    exp_dict = {"a": [3, 4]}
+
+    assert new_dict == pytest.approx(exp_dict)
+
+
+@pytest.mark.xfail(raises=TypeError, reason="No nested dicts")
+def test_list_in_dict_exact():
+    """Lists don't even work if they're exact"""
+    new_dict = {"a": [1 + 2, 3]}
+    exp_dict = {"a": [3, 4]}
+
+    assert new_dict == dict_approx(exp_dict)
