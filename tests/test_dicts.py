@@ -56,3 +56,21 @@ def test_mixed_dict():
     exp_dict = {"three": "onetwo", "c": 0.3}
 
     assert new_dict == dict_approx(exp_dict)
+
+
+def test_numeric_dict_approx_toobig_diff_orig():
+    """Test numeric dict with approx, when the diff is too big."""
+    new_dict = {"a": 0.1, "b": 0.2, "c": 0.1 + 0.2}
+    exp_dict = {"a": 0.1, "b": 0.2, "c": 0.4}
+
+    # This really should fail
+    assert new_dict == pytest.approx(exp_dict)
+
+
+def test_numeric_dict_approx_toobig_diff_new():
+    """Test numeric dict with approx, when the diff is too big."""
+    new_dict = {"a": 0.1, "b": 0.2, "c": 0.1 + 0.2}
+    exp_dict = {"a": 0.1, "b": 0.2, "c": 0.4}
+
+    # This really should fail
+    assert new_dict == dict_approx(exp_dict)
