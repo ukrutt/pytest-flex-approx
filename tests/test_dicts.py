@@ -40,6 +40,18 @@ def test_non_numeric_dict():
     assert new_dict == exp_dict
 
 
+def test_non_numeric_dict_approx():
+    """Test non-numeric dict, approximately.
+
+    I kind of think this should work.
+    """
+    new_dict = {}
+    new_dict["three"] = "one" + "two"
+    exp_dict = {"three": "onetwo"}
+
+    assert new_dict == dict_approx(exp_dict)
+
+
 def test_mixed_dict():
     """With a mixed dict we run into problems!"""
     new_dict = {}
