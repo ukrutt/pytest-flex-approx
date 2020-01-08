@@ -14,6 +14,12 @@ class ApproxMappingFlex(  # pylint: disable=too-few-public-methods
 
     This one will accept dicts with non-numeric values.
     """
+    def _check_type(self):
+        __tracebackhide__ = True
+        for key, value in self.expected.items():
+            if isinstance(value, type(self.expected)):
+                msg = "pytest.approx() does not support nested dictionaries: key={!r} value={!r}\n  full mapping={}"
+                raise TypeError(msg.format(key, value, pprint.pformat(self.expected)))
 
 
 def dict_approx(expected, rel=None, absolute=None, nan_ok=False):
