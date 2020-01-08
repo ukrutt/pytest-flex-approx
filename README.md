@@ -1,13 +1,12 @@
-# Test mixed dicts with `pytest.approx()`
+# Flexible approx for pytest
 
 Development on a class for testing dicts with pytest.
 
- - Pytest currently tests dicts, however, for testing with
-   `pytest.approx()` it only accepts shallow dicts where all `value`s
-   are numbers.
+ - `pytest.approx` currently accepts only shallow dicts where all
+   `value`s are numbers.
 
- - We want to accept dicts where there can be a
-   combination of numbers and e.g. strings.
+ - This approx also accepts dicts that have a combination of numbers
+   and e.g. strings.
 
 
 ## Installation
@@ -16,7 +15,7 @@ I like to use pyenv to specify a Python version
 
     % eval "$(pyenv init -)"
     % python3 --version
-    3.7.4
+    3.8.1
     % python3 -m venv .venv
     % . .venv/bin/activate
     % pip install --upgrade pip
