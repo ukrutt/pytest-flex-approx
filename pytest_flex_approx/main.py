@@ -30,9 +30,7 @@ def informal_tests():
     )
     act_cm = {"c": num_a + num_b, "d": "d"}
     exp_cm = {"c": num_c, "d": "d"}
-    print(
-        f"Unfortunately, {act_cm} == pytest.approx({exp_cm}) fails"
-    )
+    print(f"Unfortunately, {act_cm} == pytest.approx({exp_cm}) fails")
     assert act_cm == flex_approx(exp_cm)
     print(
         f"but, {act_cm} == flex_approx({exp_cm}) "
