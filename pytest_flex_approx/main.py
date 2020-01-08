@@ -5,22 +5,7 @@ from pytest import approx as pytest_approx
 from . import flex_approx
 
 
-def add_two(arg_x, arg_y):
-    """Add arguments.  Return result."""
-    return arg_x + arg_y
-
-
-def hello_world():
-    """Say hello to the world"""
-    arg_x = arg_y = 3
-    print(
-        f"Hello World, we've determined that "
-        f"{arg_x} + {arg_y} = {add_two(arg_x, arg_y)}"
-    )
-    main()
-
-
-def main():
+def informal_tests():
     """Do some informal tests."""
     num_a = 0.1
     num_b = 0.2

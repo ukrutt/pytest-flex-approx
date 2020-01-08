@@ -34,10 +34,7 @@ setup(
     install_requires=[
         "pytest>=5.3",
     ],
-    entry_points={
-        # If this isn't a runnable program, you can delete this entry point.
-        "console_scripts": ["hello_world=pytest_flex_approx.main:hello_world"]
-    },
+    entry_points={},
     setup_requires=["pytest-runner"],
     tests_require=["pytest"],
 )
