@@ -91,3 +91,21 @@ def test_list():
     exp_list = [0.3, 0.4]
 
     assert new_list == dict_approx(exp_list)
+
+
+@pytest.mark.xfail(raises=TypeError, reason="No nested dicts")
+def test_list_in_dict_orig():
+    """Lists don't work either."""
+    new_dict = {"a": [0.1 + 0.2]}
+    exp_dict = {"a": [0.3]}
+
+    assert new_dict == pytest.approx(exp_dict)
+
+
+@pytest.mark.xfail(raises=TypeError, reason="No nested dicts")
+def test_list_in_dict():
+    """Lists don't work either."""
+    new_dict = {"a": [0.1 + 0.2]}
+    exp_dict = {"a": [0.3]}
+
+    assert new_dict == dict_approx(exp_dict)
