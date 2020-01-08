@@ -31,15 +31,8 @@ setup(
     python_requires=">=3.6, <4",
     packages=find_packages(),
     include_package_data=True,
-    install_requires=[
-        # "numpy>=1.16",
-        # "scipy>=1.1",
-        # "paho-mqtt>=1.4",
-    ],
-    entry_points={
-        # If this isn't a runnable program, you can delete this entry point.
-        "console_scripts": ["hello_world=pytest_flex_approx.main:hello_world"]
-    },
+    install_requires=["pytest>=5.3"],
+    entry_points={},
     setup_requires=["pytest-runner"],
     tests_require=["pytest"],
 )
