@@ -11,9 +11,8 @@ from .utils import dict_approx
 )
 def test_numeric_dict():
     """Test numeric dict with floating point crumbs."""
-    new_dict = {}
-    new_dict["c"] = 0.1 + 0.2
-    exp_dict = {"c": 0.3}
+    new_dict = {"a": 0.1, "b": 0.2, "c": 0.1 + 0.2}
+    exp_dict = {"a": 0.1, "b": 0.2, "c": 0.3}
 
     # We expect this to fail, because of intricacies of floating point
     # arithmetic.
@@ -21,13 +20,10 @@ def test_numeric_dict():
 
 
 def test_numeric_dict_approx():
-    """Test numeric dict with aprox (much better)."""
-    new_dict = {}
-    new_dict["c"] = 0.1 + 0.2
-    exp_dict = {"c": 0.3}
+    """Test numeric dict with approx (much better)."""
+    new_dict = {"a": 0.1, "b": 0.2, "c": 0.1 + 0.2}
+    exp_dict = {"a": 0.1, "b": 0.2, "c": 0.3}
 
-    # We expect this to fail, because of intricacies of floating point
-    # arithmetic.
     assert new_dict == dict_approx(exp_dict)
 
 
