@@ -2,7 +2,7 @@
 
 import pytest
 
-from .utils import new_approx
+from .utils import dict_approx
 
 
 @pytest.mark.xfail(
@@ -28,7 +28,7 @@ def test_numeric_dict_approx():
 
     # We expect this to fail, because of intricacies of floating point
     # arithmetic.
-    assert new_dict == new_approx(exp_dict)
+    assert new_dict == dict_approx(exp_dict)
 
 
 def test_non_numeric_dict():
@@ -47,4 +47,4 @@ def test_mixed_dict():
     new_dict["c"] = 0.1 + 0.2
     exp_dict = {"three": "onetwo", "c": 0.3}
 
-    assert new_dict == new_approx(exp_dict)
+    assert new_dict == dict_approx(exp_dict)
