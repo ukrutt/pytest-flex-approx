@@ -2,7 +2,7 @@
 
 import pytest
 
-from .utils import dict_approx
+from .utils import flex_approx
 
 
 @pytest.mark.xfail(
@@ -24,7 +24,7 @@ def test_numeric_dict_approx():
     new_dict = {"a": 0.1, "b": 0.2, "c": 0.1 + 0.2}
     exp_dict = {"a": 0.1, "b": 0.2, "c": 0.3}
 
-    assert new_dict == dict_approx(exp_dict)
+    assert new_dict == flex_approx(exp_dict)
 
 
 def test_non_numeric_dict():
@@ -45,7 +45,7 @@ def test_non_numeric_dict_approx():
     new_dict["three"] = "one" + "two"
     exp_dict = {"three": "onetwo"}
 
-    assert new_dict == dict_approx(exp_dict)
+    assert new_dict == flex_approx(exp_dict)
 
 
 def test_mixed_dict():
@@ -55,7 +55,7 @@ def test_mixed_dict():
     new_dict["c"] = 0.1 + 0.2
     exp_dict = {"three": "onetwo", "c": 0.3}
 
-    assert new_dict == dict_approx(exp_dict)
+    assert new_dict == flex_approx(exp_dict)
 
 
 def test_numeric_dict_approx_toobig_diff_orig():
@@ -73,7 +73,7 @@ def test_numeric_dict_approx_toobig_diff_new():
     exp_dict = {"a": 0.1, "b": 0.2, "c": 0.4}
 
     with pytest.raises(AssertionError):
-        assert new_dict == dict_approx(exp_dict)
+        assert new_dict == flex_approx(exp_dict)
 
 
 @pytest.mark.xfail(raises=TypeError, reason="No nested dicts")
@@ -82,7 +82,7 @@ def test_nested_dict():
     new_dict = {"a": {"c": 0.1 + 0.2}}
     exp_dict = {"a": {"c": 0.3}}
 
-    assert new_dict == dict_approx(exp_dict)
+    assert new_dict == flex_approx(exp_dict)
 
 
 def test_list():
@@ -90,7 +90,7 @@ def test_list():
     new_list = [0.1 + 0.2, 0.4]
     exp_list = [0.3, 0.4]
 
-    assert new_list == dict_approx(exp_list)
+    assert new_list == flex_approx(exp_list)
 
 
 @pytest.mark.xfail(raises=TypeError, reason="No nested dicts")
@@ -108,7 +108,7 @@ def test_list_in_dict():
     new_dict = {"a": [0.1 + 0.2]}
     exp_dict = {"a": [0.3]}
 
-    assert new_dict == dict_approx(exp_dict)
+    assert new_dict == flex_approx(exp_dict)
 
 
 @pytest.mark.xfail(raises=TypeError, reason="No nested dicts")
@@ -126,4 +126,4 @@ def test_list_in_dict_exact():
     new_dict = {"a": [1 + 2, 3]}
     exp_dict = {"a": [3, 4]}
 
-    assert new_dict == dict_approx(exp_dict)
+    assert new_dict == flex_approx(exp_dict)

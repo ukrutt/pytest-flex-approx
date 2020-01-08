@@ -22,7 +22,7 @@ class ApproxMappingFlex(ApproxMapping):
                 super()._check_type()
 
 
-def dict_approx(expected, rel=None, absolute=None, nan_ok=False):
+def flex_approx(expected, rel=None, absolute=None, nan_ok=False):
     """Approximate for dicts."""
     if isinstance(expected, Mapping):
         return ApproxMappingFlex(expected, rel, absolute, nan_ok)
