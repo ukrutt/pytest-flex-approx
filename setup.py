@@ -26,9 +26,9 @@ setup(
     author_email="henrik@forestglenresearch.com",
     classifiers=[
         "Development Status :: 3 - Alpha",
-        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
     ],
-    python_requires=">=3.6, <4",
+    python_requires=">=3.7, <4",
     packages=find_packages(),
     include_package_data=True,
     install_requires=["pytest>=5.3"],
