@@ -1,4 +1,4 @@
-"""pytest-mix-dict -- development on a class for testing dicts with pytest.
+"""pytest-flex-approx -- Flexible approx for pytest
 """
 
 import os
@@ -16,12 +16,12 @@ with open(os.path.join(HERE, "README.md"), encoding="utf-8") as f:
 
 
 setup(
-    name="pytest-mix-dict",
+    name="pytest-flex-approx",
     version=VERSION,
-    description="Python Project Template",
+    description="Flexible approx for pytest",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
-    url="https://github.com/ukrutt/pytest-mix-dict",
+    url="https://github.com/ukrutt/pytest-flex-approx",
     author="Henrik Holm",
     author_email="henrik@forestglenresearch.com",
     classifiers=[
@@ -31,15 +31,8 @@ setup(
     python_requires=">=3.7, <4",
     packages=find_packages(),
     include_package_data=True,
-    install_requires=[
-        # "numpy>=1.16",
-        # "scipy>=1.1",
-        # "paho-mqtt>=1.4",
-    ],
-    entry_points={
-        # If this isn't a runnable program, you can delete this entry point.
-        "console_scripts": ["hello_world=pytest_mix_dict.main:hello_world"]
-    },
+    install_requires=["pytest>=5.3"],
+    entry_points={},
     setup_requires=["pytest-runner"],
     tests_require=["pytest"],
 )

@@ -6,9 +6,9 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.7.3
+      - image: circleci/python:3.7
 
-    working_directory: ~/pytest_mix_dict
+    working_directory: ~/pytest_flex_approx
 
     steps:
       - checkout
@@ -38,25 +38,25 @@ jobs:
           name: check black
           command: |
             . .venv/bin/activate
-            black --line-length 79 *.py pytest_mix_dict tests --check
+            black --line-length 79 *.py pytest_flex_approx tests --check
 
       - run:
           name: check isort
           command: |
             . .venv/bin/activate
-            isort --recursive pytest_mix_dict tests *.py --check-only
+            isort --recursive pytest_flex_approx tests *.py --check-only
 
       - run:
           name: check flake8
           command: |
             . .venv/bin/activate
-            flake8 --max-complexity 10 *.py pytest_mix_dict tests
+            flake8 --max-complexity 10 *.py pytest_flex_approx tests
 
       - run:
           name: check pylint
           command: |
             . .venv/bin/activate
-            pylint *.py pytest_mix_dict tests --disable=fixme
+            pylint *.py pytest_flex_approx tests --disable=fixme
 
       - run:
           name: pytest

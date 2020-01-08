@@ -3,4 +3,4 @@
 /.venv/
 /build/
 /dist/
-/pytest_mix_dict.egg-info/
+/pytest_flex_approx.egg-info/
