@@ -1,4 +1,4 @@
-PACKAGES = pytest_mix_dict tests
+PACKAGES = pytest_flex_approx tests
 
 .PHONY: ci
 ci: check test
