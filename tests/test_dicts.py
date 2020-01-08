@@ -2,7 +2,7 @@
 
 import pytest
 
-from .utils import flex_approx
+from pytest_flex_approx import flex_approx
 
 
 @pytest.mark.xfail(
