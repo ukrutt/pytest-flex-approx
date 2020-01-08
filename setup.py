@@ -32,9 +32,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        # "numpy>=1.16",
-        # "scipy>=1.1",
-        # "paho-mqtt>=1.4",
+        "pytest>=5.3",
     ],
     entry_points={
         # If this isn't a runnable program, you can delete this entry point.
