@@ -2,7 +2,7 @@
 
 import pytest
 
-from pytest_mix_dict import main
+from pytest_flex_approx import main
 
 
 @pytest.mark.xfail(
